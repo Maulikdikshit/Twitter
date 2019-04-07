@@ -1,0 +1,240 @@
+body{
+	margin:0;
+	padding:0;
+}
+
+header{
+	
+	display: flex;
+	justify-content: space-around;
+	height:50px;
+	/*overflow: hidden;*/
+}
+
+.logout{
+	text-decoration: none;
+	border: 1px solid black;
+	border-radius: 20px;
+	position: relative;
+	bottom: 10px;
+	padding:0 15px;
+}
+
+.home{
+	text-decoration: none;
+	position: relative;
+	bottom:5px;
+	color:#18ADDE;
+}
+.container{
+	display:flex;
+	justify-content: center;
+	background-color: #E7EFEF;
+
+
+}
+
+aside{
+
+	width:250px;
+	
+	margin-top: 15px;
+}
+
+
+.first {
+	
+	background-color: white;
+	margin-bottom: 30px;
+	width: 200px;
+
+}
+
+.ffbox{
+
+	width:95%;
+	height:100px;
+	margin-left: 5px;
+	background-color: grey;
+	border-radius:20px;
+	margin-top: 10px;
+}
+
+h5{
+	margin:0;
+	color: #7A797A;
+
+}
+
+.second{
+	background-color: white;
+}
+
+.num{
+	color:blue;
+}
+.sfbox{
+	display: flex;
+}
+
+.sfbox img{
+	position: relative;
+	top:-10px;
+	margin-left:20px;
+	height:50px;
+
+}
+
+.tfbox{
+	margin:5px;
+	display: flex;
+	
+}
+
+.tfbox div{
+	margin-left:5px;
+	margin-right: 5px;
+}
+
+.second{
+	
+	margin-top: 10px;
+	width: 200px;
+}
+
+.fsbox{
+	border-bottom: 1px solid black;
+}
+.ssbox{
+	display: flex;
+	height: 50px;
+	margin-top: 10px;
+	border-bottom: 1px solid black;
+}
+
+.ssbox div a{
+	text-decoration: none;
+	border:1px solid #18ADDE;
+	border-radius: 20px;
+	padding: 0 15px;
+	color:#18ADDE;
+	margin-left: 5px;
+
+}
+
+span{
+	font-size: 13px;
+}
+
+#ques{
+	font-weight: bold;
+	margin-left: 5px;
+}
+
+
+.title{
+	display:inline-block;
+	margin-bottom: 0;
+	margin-top: 0;
+
+}
+
+.tsbox{
+	text-align: center;
+	
+	padding:10px;
+	color:#7A797A;
+}
+
+.third{
+	margin-top:30px;
+	
+	color:#7A797A;
+	display: flex;
+	justify-content: space-between;
+	height:100px;
+	width:200px;
+	margin-right:10px;
+	background-color: white;
+
+}
+
+.third span{
+	margin-top: 10px;
+	margin-left:5px;
+	margin-right: 5px;
+}
+.main{
+	margin-top: 15px;
+}
+input{
+	border:none;
+}
+
+.main-fbox{
+	display: flex;
+	background-color: white;
+	padding:5px;
+	margin-bottom: 10px;
+}
+
+.main-ffbox{
+	width: 300px;
+	margin-left:10px;
+	background-color: grey;
+	border-radius: 20px;
+}
+
+.main-ffbox input{
+	color:black;
+	background-color: grey;
+	margin-left: 10px;
+}
+
+.main-ffbox img{
+	position: relative;
+	left:70px;
+	top:10px;
+}
+
+.main-sbox{
+	background-color: white;
+}
+
+
+.pos{
+	position: relative;
+	bottom:10px;
+}
+.post-text{
+	margin-left: 40px;
+}
+
+.main-sbox-icons{
+	margin-top: 5px;
+	margin-left: 40px;
+	display: flex;
+
+}
+
+.main-sbox-icons-content{
+	margin-right: 10px;
+}
+
+.text{
+	width:400px;
+}
+
+.main-tbox{
+	background-color: white;
+}
+
+.main-fourthbox{
+	background-color: white;
+}
+#play{
+	display: inline-block;
+	position: relative;
+	right:260px;
+	bottom:100px;
+}
