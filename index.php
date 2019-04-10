@@ -1,1 +1,1 @@
-<? php include_once("./LandingPage/maulik_assignment1.html");?>
+<? php header("Location: ./LandingPage/maulik_assignment1.html");?>
