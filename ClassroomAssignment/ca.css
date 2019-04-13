@@ -1,0 +1,16 @@
+.fl{
+
+	float:left;
+	background-color: blue;
+	width:300px;
+}
+
+.flTwo{
+	float:right;
+	width:400px;
+	background-color: green;
+}
+
+.nav{
+	display: inline;
+}
