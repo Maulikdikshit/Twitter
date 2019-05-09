@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div>
+		
+	</div>
+
+</body>
+<script type="text/javascript">
+	
+var d1;
+	var promise = fetch("https://fsd1.herokuapp.com/users/1/details");
+	promise.then((res) => res.json())
+	.then(data=>console.log(data));
+
+	var promise = fetch("https://fsd1.herokuapp.com/users/1/details");
+	promise.then((res) => res.json())
+	.then((data)=>{
+		console.log(data);
+		d1=data;
+		console.log(d1);
+	});
+	console.log(d1.data.full_name);
+
+</script>
+</html>

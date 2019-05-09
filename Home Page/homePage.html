@@ -24,7 +24,7 @@
 				<div class="ffbox"></div>
 				<div class="sfbox">
 					<img src="homePageImages/Home_page-02.png">
-					<div>USER NAME<br><span>@Login user id</span></div>
+					<div><span>USER NAME</span><br><span>@Login user id</span></div>
 				</div>
 				<div class="tfbox">
 					<div>
@@ -165,8 +165,11 @@
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim.
 				</div>
-				<img src="homePageImages/Home_page-16.png" class="post-text">
-				<img src="homePageImages/play-icon.png" id="play"class="post-text">
+				<!-- <img src="homePageImages/Home_page-16.png" class="post-text">
+				<img src="homePageImages/play-icon.png" id="play"class="post-text"> -->
+				<video width="400" controls>
+					<source src="https://example.com/videos/234.mp4" type="video/mp4">
+				</video>
 				<div class="post-text text">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim.
@@ -194,4 +197,80 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript">
+
+
+	var suggestionDetails;
+	var promiseSuggestion = fetch("https://fsd1.herokuapp.com/users/1/followers/suggestions");
+		promiseSuggestion.then((response) => response.json())
+		.then((suggestionData) => {
+			suggestionDetails = suggestionData;
+			// console.log('suggestionDetails',suggestionDetails);
+			suggestionDomManipulation(suggestionDetails);
+		});
+	
+	var userDetails;
+	var promise = fetch("https://fsd1.herokuapp.com/users/1/details");
+	promise.then((res) => res.json())
+	.then((data)=>{
+		// console.log(data);
+		userDetails=data;
+		domManipulation(userDetails);
+		// console.log(userDetails.data.full_name);
+	});
+
+	var followingDetails;
+	var followingPromise = fetch("https://fsd1.herokuapp.com/users/1/following/tweets");
+	followingPromise.then((response) => response.json())
+					.then((data) => {
+						followingDetails = data;
+						console.log('followingDetails',followingDetails);
+						followingDomManipulation(followingDetails);
+					});
+
+	function domManipulation(data){
+		var element = document.querySelector('.sfbox div span');
+		element.innerHTML = data.data.full_name;
+		var secondElement = element.nextSibling;
+		var thirdChid= secondElement.nextSibling;
+		thirdChid.innerHTML = data.data.user_name;
+		var tweets = document.querySelector('.tfbox > div:nth-child(1) span');
+		tweets.innerHTML = data.data.stats.tweets;
+		var following = document.querySelector('.tfbox > div:nth-child(2) span');
+		following.innerHTML = data.data.stats.following;
+		var follow = document.querySelector('.tfbox > div:nth-child(3) span');
+		follow.innerHTML = data.data.stats.followers;
+		// console.log(data.data.stats.followers);
+	}
+
+	function suggestionDomManipulation(sData){
+
+		var firstSug = document.querySelector('.second > div:nth-child(2) div h4');
+		firstSug.innerHTML =  sData.data[0].full_name;
+		var secondSug = document.querySelector('.second > div:nth-child(3) div h4');
+		secondSug.innerHTML = sData.data[1].full_name;
+
+	}
+
+	function followingDomManipulation(fData){
+		// console.log('fData',fData.data[0].stats.retweets);
+		var firstElement = document.querySelector('.main-sbox > div:nth-child(2)');
+		firstElement.innerHTML = fData.data[0].text;
+		var likes = document.querySelector('.main-sbox-icons > div:nth-child(3) span');
+		likes.innerHTML = fData.data[0].stats.likes;
+		var comments = document.querySelector('.main-sbox-icons > div:nth-child(1) span');
+		comments.innerHTML = fData.data[0].stats.comments;
+		var retweets = document.querySelector('.main-sbox-icons > div:nth-child(2) span');
+		retweets.innerHTML = fData.data[0].stats.retweets;
+	}
+	// var firstElement = document.querySelector('.main-sbox-icons > div:nth-child(2) span');
+	// var secondElement = firstElement.innerHTML;
+		// var b = element.nextSibling;
+		// var c= b.nextSibling.innerHTML;
+
+
+	// console.log(secondElement);
+	// element.innerHTML= userDetails.data.full_name;
+	// console.log(element.innerHTML );
+</script>
 </html>
