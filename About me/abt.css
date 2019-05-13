@@ -1,0 +1,17 @@
+header{
+	display: flex;
+	justify-content: space-around;
+}
+
+.text{
+	position: relative;
+	bottom:10px;
+}
+
+.like{
+
+	border-radius: 20px;
+	padding: 12px 50px;
+	border:1px solid black;
+	text-decoration: none;
+}

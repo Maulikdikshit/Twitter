@@ -11,7 +11,7 @@
 </body>
 <script type="text/javascript">
 	
-var d1;
+/*var d1;
 	var promise = fetch("https://fsd1.herokuapp.com/users/1/details");
 	promise.then((res) => res.json())
 	.then(data=>console.log(data));
@@ -23,7 +23,74 @@ var d1;
 		d1=data;
 		console.log(d1);
 	});
-	console.log(d1.data.full_name);
+	console.log(d1.data.full_name);*/
+
+
+	let sum = (a,b) => a+b ;
+	let sub = (a,b) => a-b ; 
+
+	let calculate = function(func,i,j){
+		return func(i,j);
+	}
+
+	console.log(calculate(sum,34,45));
+
+
+	let customFunc =  function(func){
+
+	}
+
+
+	let configUrls =  function(url) {
+
+		let conUrl = url;
+
+
+
+		let obj = {
+			getUrl:function(){
+			return conUrl;
+		},
+		setuRL:function(text){
+			conUrl= conUrl + text;
+		}
+		}	
+
+		return obj;
+		
+	}
+
+
+
+
+
+	console.log(configUrls('https://api/get/details'));
+	let clos = configUrls('https://api/get/details');
+	console.log(clos);
+	let get = clos.getUrl();
+	console.log(get);
+	let set = clos.setuRL('prod');
+	console.log(set);
+
+
+
+let urls =[
+'https://fsd1.herokuapp.com/users/1/following',
+'https://fsd1.herokuapp.com/users/1/details'
+]
+
+
+	let promises =  urls.map(url => fetch(url));
+	let resolvedPromises = Promise.all(promises);
+	console.log(resolvedPromises);
+	resolvedPromises.
+	then((responses)=> responses.map((resp) => {
+		resp.json();
+		console.log(resp.json());
+	}
+	)
+	);
+	
 
 </script>
 </html>

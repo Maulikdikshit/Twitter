@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>	
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="profile.css">
+</head>
+<body>
+	<div class="container">
+		<div class="header-top">
+			this is header	
+		</div>
+		<div class="header">
+			<div class="header-image">
+				<img src="profilePageImages/Profile page Design-05.png" alt="profile-Image" class="image">
+			</div>
+			<div class="stats">
+				<div class="tweets">
+					<h4>Tweets</h4>
+					<span>73</span>
+					
+				</div>
+				<div class="following">
+					<h4>Following</h4>
+					<span>119</span>
+					
+				</div>
+				<div class="followers">
+					<h4>Followers</h4>
+					<span>104</span>				
+				</div>
+				<div class="edit">
+					<a href="">Edit Profile</a>
+				</div>				
+			</div>
+		</div>
+		<div class="body-container">
+		<div class="main">
+			<div class="user-details">
+				<div class="details">
+					<h3>User Name</h3>
+					<div>@Login user id</div>
+					<div class="location">
+						<img src="profilePageImages/Profile page Design-06.png" alt="location" class= "location-logo">
+						<span class="details-detail">Bengaluru,India</span>
+					</div>
+					<div class="webAddress">
+						<img src="profilePageImages/Profile page Design-07.png" alt="web-add" class="web-logo">
+						<span class="details-detail">www.exap.com</span>
+					</div>
+					<div class="joined">
+						<img src="profilePageImages/Profile page Design-08.png" alt="joined" class="joined-logo">
+						<span class="details-detail">default</span>
+					</div>
+					<div class="birthday">
+						<img src="profilePageImages/Profile page Design-09.png" alt="bday" class="bday-logo">
+						<span class="details-detail">default</span>
+					</div>
+				</div>
+				<div class="photos">
+					<div>Photos & Videos</div>
+					
+				</div>
+				
+			</div>
+			<div class="user-followers">
+				
+			</div>
+		</div>
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript">
+
+	var details;
+	var promise =  fetch("https://fsd1.herokuapp.com/users/1/details");
+	promise.then((response) => response.json()).
+	then((data) => {
+		console.log(data.data.full_name);
+		details = data;
+		console.log(details);
+		userDetailsDomManipulation(details);
+	});
+
+	function userDetailsDomManipulation(data){
+		var tweets = document.querySelector('.tweets span');
+		tweets.innerHTML = data.data.stats.tweets;
+		var following = document.querySelector('.following span');
+		following.innerHTML = data.data.stats.following;
+		var followers = document.querySelector('.followers span');
+		followers.innerHTML = data.data.stats.followers;
+		var name = document.querySelector('.details h3');
+		name.innerHTML = data.data.full_name;
+		var location = document.querySelector('.location .details-detail');
+		location.innerHTML = data.data.user_from;
+		var webAdd = document.querySelector('.webAddress .details-detail');
+		webAdd.innerHTML = data.data.user_website;
+		var joined  =  document.querySelector('.joined .details-detail');
+		joined.innerHTML = data.data.user_created_at;
+		var birth =  document.querySelector('.birthday .details-detail');
+		birth.innerHTML = data.data.user_birthday;
+
+
+	}
+
+	var tweets = document.querySelector('.details h3');
+	console.log(tweets);
+</script>
+</html>
