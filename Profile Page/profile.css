@@ -100,3 +100,201 @@ font-size: 12px;
 	left:5px;
 	color:#7A797A;
 }
+
+.photos-text{
+	position: relative;
+    top: 22px;
+    left: 10px;
+}
+
+.photos img {
+	    width: 190px;
+    height: 220px;
+}
+.second{
+	background-color: white;
+}
+.sfbox{
+	display: flex;
+}
+
+.sfbox img{
+	position: relative;
+	top:-10px;
+	margin-left:20px;
+	height:50px;
+
+}
+
+.tfbox{
+	margin:5px;
+	display: flex;
+	
+}
+
+.tfbox div{
+	margin-left:5px;
+	margin-right: 5px;
+}
+
+.second{
+	
+	margin-top: 10px;
+	width: 200px;
+}
+
+.fsbox{
+	border-bottom: 1px solid black;
+}
+.ssbox{
+	display: flex;
+	height: 50px;
+	margin-top: 10px;
+	border-bottom: 1px solid black;
+}
+
+.ssbox div a{
+	text-decoration: none;
+	border:1px solid #18ADDE;
+	border-radius: 20px;
+	padding: 0 15px;
+	color:#18ADDE;
+	margin-left: 5px;
+
+}
+
+span{
+	font-size: 13px;
+}
+
+#ques{
+	font-weight: bold;
+	margin-left: 5px;
+}
+
+
+.title{
+	display:inline-block;
+	margin-bottom: 0;
+	margin-top: 0;
+
+}
+
+.tsbox{
+	text-align: center;
+	
+	padding:10px;
+	color:#7A797A;
+}
+
+.third{
+	margin-top:30px;
+	
+	color:#7A797A;
+	display: flex;
+	justify-content: space-between;
+	height:100px;
+	width:200px;
+	margin-right:10px;
+	background-color: white;
+
+}
+
+.third span{
+	margin-top: 10px;
+	margin-left:5px;
+	margin-right: 5px;
+}
+
+.search{
+
+	margin-top: 40px;
+}
+
+.search input{
+	    border-radius: 20px;
+    background-color: #E7feef;
+    width: 430px;
+}
+.ffbox{
+
+	width:95%;
+	height:100px;
+	margin-left: 5px;
+	background-color: grey;
+	border-radius:20px;
+	margin-top: 10px;
+}
+
+.people{
+	margin-top: 10px;
+	height:400px;
+	width:500px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.p-first{
+	background-color: white;
+	width:200px;
+	height:200px;
+	border-radius: 5px;
+}
+
+.p-third{
+	background-color: white;
+	width:200px;
+	height:200px;
+	border-radius: 5px;
+	    margin-top: 15px;
+}
+
+.p-second{
+	    background-color: white;
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+
+.p-four{
+	    background-color: white;
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    margin-left: 15px;
+        margin-top: 15px;
+}
+.empty-space{
+	background-color: grey;
+    width: 190px;
+    height: 85px;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-top: 5px;
+
+}
+.f-bio{
+	font-size: 15px;
+}
+
+.image-content{
+	display: flex;
+}
+
+.content{
+	margin-left: 20px;
+}
+
+
+.common{
+	    height: 60px;
+    position: relative;
+    top: -19px;
+    left: 12px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  position: relative;
+  left:20px;
+}

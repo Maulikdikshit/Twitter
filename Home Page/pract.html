@@ -26,7 +26,57 @@
 	console.log(d1.data.full_name);*/
 
 
-	let sum = (a,b) => a+b ;
+ var outerFunc = function (){
+	 i =  60;
+	// console.log(i);
+
+	var inner =  function(){
+		// console.log(i);
+		return i;
+	}
+
+	return inner;
+}
+
+var out = outerFunc();
+console.log(out);
+ i=out();
+ console.log(i);
+// console.log(in);
+
+	/*function print(){
+		console.log(this.name);
+	}
+
+	user = {
+		name:'maulik'
+	};
+
+	car = {
+		name : 'monster'
+	};
+
+	print.call(user);*/
+
+
+	var delayedFunc = function(time,message){
+		var promise = new Promise(function(resolve,reject){
+
+			setTimeout(function(){
+				resolve('hi' + message),
+			reject('error')
+		},time);			
+		})
+		return promise;
+	}
+
+	var out = delayedFunc(4000,'how are you');
+	console.log(out);
+
+	setTimeout(delayedFunc(500))
+
+
+	/*let sum = (a,b) => a+b ;
 	let sub = (a,b) => a-b ; 
 
 	let calculate = function(func,i,j){
@@ -38,10 +88,10 @@
 
 	let customFunc =  function(func){
 
-	}
+	}*/
 
 
-	let configUrls =  function(url) {
+	/*let configUrls =  function(url) {
 
 		let conUrl = url;
 
@@ -60,21 +110,17 @@
 		
 	}
 
-
-
-
-
 	console.log(configUrls('https://api/get/details'));
 	let clos = configUrls('https://api/get/details');
 	console.log(clos);
 	let get = clos.getUrl();
 	console.log(get);
 	let set = clos.setuRL('prod');
-	console.log(set);
+	console.log(set);*/
 
 
 
-let urls =[
+/*let urls =[
 'https://fsd1.herokuapp.com/users/1/following',
 'https://fsd1.herokuapp.com/users/1/details'
 ]
@@ -89,7 +135,7 @@ let urls =[
 		console.log(resp.json());
 	}
 	)
-	);
+	);*/
 	
 
 </script>

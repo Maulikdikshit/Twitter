@@ -57,12 +57,115 @@
 					</div>
 				</div>
 				<div class="photos">
-					<div>Photos & Videos</div>
+					<div class="photos-text">Photos & Videos</div>
+					<div>
+						<img src="profilePageImages/Profile page Design-12.png" alt="image">
+					</div>
 					
 				</div>
+				<div class="second">
+				<div class="fsbox">
+					<span id="ques">Who to follow</span>
+					
+				</div>
+				<div class="ssbox">
+					<img src="profilePageImages/Home_page-10.png">
+					<div>
+						<h4 class="title">UserName</h4>
+						<span>@Login user id</span>
+						<br>
+						<a href="">Follow</a>
+					</div>
+				</div>
+				<div class="ssbox">
+					<img src="profilePageImages/Home_page-10.png">
+					<div>
+						<h4 class="title">UserName</h4>
+						<span>@Login user id</span>
+						<br>
+						<a href="">Follow</a>
+					</div>
+				</div>
+				<div class="ssbox">
+					<img src="profilePageImages/Home_page-10.png">
+					<div>
+						<h4 class="title">UserName</h4>
+						<span>@Login user id</span>
+						<br>
+						<a href="">Follow</a>
+					</div>
+				</div>
+				<div class="tsbox">Find people you know</div>
+			</div>
+			<div class="third"><span>@2019 Twitter</span><span>About Me</span></div>
 				
 			</div>
 			<div class="user-followers">
+				<div class="search">	
+				<!-- <img src="profilePageImages/Profile page Design-06.png">				 -->
+					<input type="text" name="name" placeholder="Search">									
+				</div>
+				<div class="people">
+					<div class="p-first">
+						<div class="empty-space">
+							
+						</div>
+						<div class="image-content">
+							<img src="profilePageImages/Profile page Design-17.png" class="common">
+							<div class="content">
+								<span class="f-name">USER NAME</span>
+								<br>
+								<span>@Login user id</span>								
+							</div>
+						</div>
+						<div class="f-bio">Love to kill you</div>
+					</div>
+					<div class="p-second">
+						<div class="empty-space">
+							
+						</div>
+						<div class="image-content">
+							<img src="profilePageImages/Profile page Design-17.png" class="common">
+							<div class="content">
+								<span class="s-name">USER NAME</span>
+								<br>
+								<span>@Login user id</span>
+							</div>
+						</div>
+						<div class="s-bio">Love to kill you</div>
+					</div>
+					<div class="p-third">
+						<div class="empty-space">
+							
+						</div>
+						<div class="image-content">
+							<img src="profilePageImages/Profile page Design-17.png" class="common">
+							<div class="content">
+								<span class="t-name">USER NAME</span>
+								<br>
+								<span>@Login user id</span>
+							</div>
+						</div>
+						<div class="t-bio">Love to kill you</div>
+					</div>
+					<div class="p-four">
+						<div class="empty-space">
+							
+						</div>
+						<div class="image-content">
+							<img src="profilePageImages/Profile page Design-17.png" class="common">
+							<div class="content">
+								<span class="f-name">USER NAME</span>
+								<br>
+								<span>@Login user id</span>
+							</div>
+						</div>
+						<div class="f-bio">Love to kill you</div>
+					</div>
+				</div>
+					</div>
+					
+				</div>
 				
 			</div>
 		</div>
@@ -81,6 +184,38 @@
 		console.log(details);
 		userDetailsDomManipulation(details);
 	});
+
+	var pdetails;
+	var promiseTwo = fetch("https://fsd1.herokuapp.com/users/1/followers/suggestions");
+	promiseTwo.then((response) => response.json()).then((data) => {
+		console.log('secondapi',data);
+		pdetails = data;
+		peopleDetailsDomManipulation(pdetails);
+
+	})
+
+	function peopleDetailsDomManipulation(pdata){
+		console.log(pdata.data[0].full_name);
+		var first = document.querySelector('.p-first .image-content .content .f-name');
+		first.innerHTML = pdata.data[0].full_name;
+		var fbio = document.querySelector('.p-first .f-bio');
+		fbio.innerHTML = pdata.data[0].user_bio;
+		console.log(fbio);		
+		console.log(first);
+
+		var second = document.querySelector('.p-second .image-content .content .s-name');
+		second.innerHTML = pdata.data[1].full_name;
+		var sbio = document.querySelector('.p-second .s-bio');
+		sbio.innerHTML = pdata.data[1].user_bio;
+
+		var third = document.querySelector('.p-third .image-content .content .t-name')
+		third.innerHTML = pdata.data[2].full_name;
+		var tbio = document.querySelector('.p-third .t-bio');
+		tbio.innerHTML = pdata.data[2].user_bio;
+
+	}
+
+
 
 	function userDetailsDomManipulation(data){
 		var tweets = document.querySelector('.tweets span');
@@ -105,5 +240,8 @@
 
 	var tweets = document.querySelector('.details h3');
 	console.log(tweets);
+	var first = document.querySelector('.p-first .image-content .content .f-name');
+		console.log(first);
+
 </script>
 </html>
