@@ -175,6 +175,56 @@
 </body>
 <script type="text/javascript">
 
+
+
+/* PROMISE.ALL*/
+
+var profile1 = "https://fsd1.herokuapp.com/users/1/details";
+var profile2 = "https://fsd1.herokuapp.com/users/1/followers/suggestions";
+var profile3 = "https://api.github.com/users/pjhyett";
+
+var urls = [];
+var res = [];
+urls.push(profile1);
+urls.push(profile2);
+urls.push(profile3);
+
+var fetchApis = urls.map(url => fetch(url));
+console.log(urls);
+var consolidatedPromise = Promise.all(fetchApis);
+consolidatedPromise.then(respo => {
+	console.log(respo);
+	// res = respo ;
+	// console.log(res);
+
+	respo.forEach( respon => console.log(res.push(respon.json())));
+		
+})
+
+
+/* UTITLITY FUNCTION */
+
+	let configUrls =  function(url) {
+		let conUrl = url;
+		let obj = {
+			getUrl:function(){
+			return fetch(conUrl);
+		},
+		setuRL:function(text){
+			conUrl= conUrl + text;
+		}
+		}
+		return obj;		
+	}
+
+	/*console.log(configUrls('https://api/get/details'));
+	let clos = configUrls('https://api/get/details');
+	console.log(clos);
+	let get = clos.getUrl();
+	console.log(get);
+	let set = clos.setuRL('prod');
+	console.log(set);*/
+
 	var details;
 	var promise =  fetch("https://fsd1.herokuapp.com/users/1/details");
 	promise.then((response) => response.json()).

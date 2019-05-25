@@ -10,7 +10,34 @@
 
 </body>
 <script type="text/javascript">
-	
+	//promise1 = fetch("https://api.github.com/users/mojombo");
+	//promise2 = fetch("https://api.github.com/users/defunkt");
+	//promise3 = fetch("https://api.github.com/users/pjhyett");
+
+var profile1 = "https://api.github.com/users/mojombo";
+var profile2 = "https://api.github.com/users/defunkt";
+var profile3 = "https://api.github.com/users/pjhyett";
+
+var urls = [];
+var res = [];
+urls.push(profile1);
+urls.push(profile2);
+urls.push(profile3);
+
+var fetchApis = urls.map(url => fetch(url));
+console.log(urls);
+var consolidatedPromise = Promise.all(fetchApis);
+consolidatedPromise.then(respo => {
+	console.log(respo);
+	// res = respo ;
+	// console.log(res);
+
+	respo.forEach( respon => console.log(res.push(respon.json())));
+		
+})
+console.log('array',res);
+
+	// var consolidatedPromise = Promise.all([promise1,promise2,promise3])
 /*var d1;
 	var promise = fetch("https://fsd1.herokuapp.com/users/1/details");
 	promise.then((res) => res.json())
