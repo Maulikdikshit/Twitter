@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	/*class Employee{
+
+		constructor(name,age){
+			this._name = name;
+			this._age = age ;
+		}
+
+		get name(){
+			return this._name;
+		}
+
+		get age(){
+			return this._age
+		}
+	}
+
+
+	class RegularEmployee extends Employee{
+		constructor(name,age,salary,vacationDays){
+			super(name,age);
+			this._salary = salary;
+			this._vacationDays = vacationDays;
+		}
+
+		get salary(){
+			return this._salary;
+		}
+
+		get vacationDays(){
+			return this._vacationDays;
+		}
+	}
+
+	class ContractEmployee extends Employee {
+		constructor(payPerHour,contractDuration){
+			this._payPerHour = payPerHour;
+			this._contractDuration = contractDuration;
+		}
+
+		get payPerHour(){
+			return this._payPerHour;
+		}
+
+		get contractDuration(){
+			return this._contractDuration;
+		}
+	}
+
+
+	let ram = new RegularEmployee('Ram',26,20000,20);
+	console.log(ram._age);
+	console.log(ram.salary);*/
+
+	let asyncFunc = function(url){
+
+		let promise = fetch(url);
+		return promise;
+		/*promise.then((data) => data.json()).then((response) => console.log(response));*/
+	}
+
+	// asyncFunc('https://api.github.com/search/users?q=prashdeep');
+
+	/*let promise = fetch('https://api.github.com/search/users?q=prashdeep');
+	promise.then((response) => response.json()).then((data) => console.log(data));*/
+
+	async function callAsync(){
+		 let res = await asyncFunc('https://api.github.com/search/users?q=prashdeep');
+		let dataw =  await res.json();
+		console.log('sdsd',dataw);
+		 
+		 console.log(`this should be printed after the promise has been resolved ${res}`);
+		 console.log(`this should be printed after the promise has been resolved `);
+
+	}
+callAsync();
+// function m(){
+
+// }
+
+</script>
+</html>

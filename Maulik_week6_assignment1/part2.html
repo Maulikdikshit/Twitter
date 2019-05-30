@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	let miTeam = 'Rohit sharma, hardik pandya, Kieron Pollard, Lasit Malinga, Yuvaraj Singh, Surya kumar Yadav, Rashik Salam Adam Milne, Krunal Pandya ';
+
+	let rcbTeam = "Virat Kohli, A Nath Y Chahal, AB de Villiers, P Barman, Dale Steyn, D Padikkal, Milind Kumar, Mohammed Siraj, Shimron Hetmyer Shivam Dube Tim Southe";
+
+	 let cskTeam = "MS Dhoni, KM Asif, Sam Billings, Chaitanya Bishnoi, Dwayne Bravo, Deepak Chahar, Faf du Plessis, Ruturaj Gaikwad, Harbhajan Singh,Imran Tahir, Ravindra Jadeja, Kedar Jadhav, Narayan Jagadeesan, Scott Kuggeleijn, Monu Kumar, Suresh Raina, Ambati Rayudu";
+	 let miArray = miTeam.split(',');
+	 let rcbArray = rcbTeam.split(',');
+	 let cskArray =  cskTeam.split(',');
+	 console.log(miArray);
+	 let [captain] = miArray;
+	 let miCaptain = [captain]
+	 let [captainRcb] = rcbArray;
+	 let rcbCaptain = [captainRcb]
+	 let [captainCsk] = cskArray;
+	 let cskCaptain = [captainCsk]
+
+	 console.log(miCaptain);
+	 console.log(rcbCaptain);
+	 console.log(cskCaptain);
+	 let captains = miCaptain.concat(rcbCaptain).concat(cskCaptain);
+	 console.log(captains);
+	
+</script>
+</html>

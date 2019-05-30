@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	let familyArray = [
+       {
+           name:'Vinay',
+           valid_id: false
+       },
+       {
+           name:'Harish',
+           valid_id:false 
+       },
+       {
+           name:'Bhavana',
+           valid_id: true
+       },
+       {
+           name:'Krishna',
+           valid_id: true
+       }
+   ]
+
+   function isValid(element){
+   	console.log(element.valid_id);
+   	return element.valid_id;
+   }
+
+const v = familyArray.some(isValid);
+console.log(v);
+</script>
+</html>

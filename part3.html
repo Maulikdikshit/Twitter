@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+
+	function currencyConverter(amount){
+
+		return {
+
+			USD: amount/66,
+			AUD: amount/50,
+			EUR: amount/80
+		}
+	}
+	
+	var rsult = currencyConverter(110);
+	console.log(rsult);
+
+	let {AUD,USD,EUR} = rsult;
+	console.log(`the converted currency are AUD--> ${AUD} USD-->${USD} EUR-->${EUR}`)
+</script>
+</html> 

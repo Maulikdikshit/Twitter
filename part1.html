@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	
+	let rcb={
+   name: 'Royal Challengers, Bangalore', 
+   extras:15, 
+   batsman:[
+    {
+        name:'Virat',
+        runs:9
+    },
+    {
+        name:'AB De Villiers',
+        runs:25
+    },
+    {
+        name:'Dale Steyn',
+        runs:40
+    },
+    {
+        name:'MoeenAli',
+        runs:26
+    },
+    {
+        name:'Parthiv',
+        runs:53
+    },
+    {
+        name:'Stoins',
+        runs:14
+    },
+    {
+        name:'Akshdeep',
+        runs:24
+    }
+  ]
+}
+
+let csk={
+    name:'Chennai Super Kings, Chennai',
+    extras:12, 
+    batsman:[
+     {
+         name:'Watson',
+         runs:5
+     },
+     {
+         name:'Suresh Raina',
+         runs:12
+     },
+     {
+         name:'Ambatii Rayudu',
+         runs:29
+     },
+     {
+         name:'Kedar Jadhav',
+         runs:9
+     },
+     {
+         name:'Dhoni',
+         runs:84
+     },
+     {
+         name:'Bravo',
+         runs:5
+     },
+     {
+         name:'Shardul Thakur',
+         runs:12
+     }
+   ]
+ }
+
+
+ var cskRunsArray = [];
+
+ csk.batsman.forEach((element) => {
+cskRunsArray.push(element.runs);
+ })
+
+var rcbRunsArray = [];
+rcb.batsman.forEach((element) => {
+	rcbRunsArray.push(element.runs);
+})
+ console.log(cskRunsArray);
+ console.log(rcbRunsArray);
+totalCskRuns =cskRunsArray.reduce((prev,current) => {
+	return prev+current;
+})
+
+totalRcbRuns =rcbRunsArray.reduce((prev,current) => {
+	return prev+current;
+})
+console.log(totalCskRuns);
+console.log(totalRcbRuns);
+
+function winner(sum1,sum2,text1,text2){
+
+	if( sum1 > sum2){
+		console.log( ` ${text1} is winner ` )
+	} else{
+		console.log( ` ${text2} is winner` )
+
+	}
+
+}
+
+
+winner(totalCskRuns,totalRcbRuns,'CSK','RCB');
+</script>
+</html>

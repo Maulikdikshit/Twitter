@@ -175,7 +175,22 @@
 </body>
 <script type="text/javascript">
 
+/*Async Await*/
 
+let asyncFunc = function(url){
+
+		let promise = fetch(url);
+		return promise;
+	}
+
+		async function callAsync(){
+		 let res = await asyncFunc('https://fsd1.herokuapp.com/users/1/details');
+		let dataw =  await res.json();
+		console.log('sdsd',dataw.data);
+		let {cover_img,following,full_name,id,profile_img,stats,user_bio,user_birthday,...details} =dataw.data
+		console.log(`the name is ${full_name} with ${id},bio is ${user_bio}`);
+	}
+callAsync();
 
 /* PROMISE.ALL*/
 
@@ -190,10 +205,10 @@ urls.push(profile2);
 urls.push(profile3);
 
 var fetchApis = urls.map(url => fetch(url));
-console.log(urls);
+// console.log(urls);
 var consolidatedPromise = Promise.all(fetchApis);
 consolidatedPromise.then(respo => {
-	console.log(respo);
+	// console.log(respo);
 	// res = respo ;
 	// console.log(res);
 
@@ -229,29 +244,29 @@ consolidatedPromise.then(respo => {
 	var promise =  fetch("https://fsd1.herokuapp.com/users/1/details");
 	promise.then((response) => response.json()).
 	then((data) => {
-		console.log(data.data.full_name);
+		// console.log(data.data.full_name);
 		details = data;
-		console.log(details);
+		// console.log(details);
 		userDetailsDomManipulation(details);
 	});
 
 	var pdetails;
 	var promiseTwo = fetch("https://fsd1.herokuapp.com/users/1/followers/suggestions");
 	promiseTwo.then((response) => response.json()).then((data) => {
-		console.log('secondapi',data);
+		// console.log('secondapi',data);
 		pdetails = data;
 		peopleDetailsDomManipulation(pdetails);
 
 	})
 
 	function peopleDetailsDomManipulation(pdata){
-		console.log(pdata.data[0].full_name);
+		// console.log(pdata.data[0].full_name);
 		var first = document.querySelector('.p-first .image-content .content .f-name');
 		first.innerHTML = pdata.data[0].full_name;
 		var fbio = document.querySelector('.p-first .f-bio');
 		fbio.innerHTML = pdata.data[0].user_bio;
-		console.log(fbio);		
-		console.log(first);
+		// console.log(fbio);		
+		// console.log(first);
 
 		var second = document.querySelector('.p-second .image-content .content .s-name');
 		second.innerHTML = pdata.data[1].full_name;
@@ -289,9 +304,9 @@ consolidatedPromise.then(respo => {
 	}
 
 	var tweets = document.querySelector('.details h3');
-	console.log(tweets);
+	// console.log(tweets);
 	var first = document.querySelector('.p-first .image-content .content .f-name');
-		console.log(first);
+		// console.log(first);
 
 </script>
 </html>
